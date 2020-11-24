@@ -12,8 +12,6 @@ struct ContentView: View {
     @State private var addButtonWasPressed = false
     @State private var sliderValue:CGFloat = 0.0
    
-    var cardOffset:CGFloat = 5
-    var rotationDirection:CGFloat = 360
     var body: some View {
         VStack {
             Spacer()

@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var addButtonWasPressed = false
     @State private var sliderValue:CGFloat = 0.0
+    @State private var offsetValue = CGSize.zero
    
     var body: some View {
         VStack {
@@ -25,14 +26,24 @@ struct ContentView: View {
             }
             .offset(x: 160, y: -230)
             
-            Slider(value: $sliderValue)
-                .frame(width: 300)
-                .foregroundColor(.blue)
-                .offset(y: -180)
             ZStack {
                 ForEach(MockData.cardViewCollection.indices) { card  in
                     CardView(cardViewModel:MockData.cardViewCollection[card])
-                        .offset(x:CGFloat(card) * 2, y:CGFloat(card) * CGFloat(sliderValue * 30))
+                        .offset(x:CGFloat(card) * 2, y:CGFloat(card) * CGFloat(self.offsetValue.height / 10))
+                        .gesture(
+                            DragGesture()
+                                .onChanged { gesture in
+                                    self.offsetValue  = gesture.translation
+                                }
+                                .onEnded { _ in
+                                    if abs(self.offsetValue.height) > 150 {
+                                        // remove the card
+                                       
+                                    } else {
+                                        //self.offsetValue.height = .zero
+                                    }
+                                }
+                        )
                 }
             }
             .offset(x:-20, y: -150)

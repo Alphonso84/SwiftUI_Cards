@@ -11,6 +11,8 @@
 		D0F11026256B427E002F2A6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F11025256B427E002F2A6E /* ContentView.swift */; };
 		D0F11028256B427F002F2A6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0F11027256B427F002F2A6E /* Assets.xcassets */; };
 		D0F1102B256B427F002F2A6E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0F1102A256B427F002F2A6E /* Preview Assets.xcassets */; };
+		D0F11034256B4FF7002F2A6E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F11033256B4FF7002F2A6E /* CardView.swift */; };
+		D0F11038256C5C25002F2A6E /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F11037256C5C25002F2A6E /* CardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		D0F11027256B427F002F2A6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0F1102A256B427F002F2A6E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0F1102C256B427F002F2A6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0F11033256B4FF7002F2A6E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		D0F11037256C5C25002F2A6E /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				D0F11023256B427E002F2A6E /* SwiftUIExperimentApp.swift */,
 				D0F11025256B427E002F2A6E /* ContentView.swift */,
+				D0F11033256B4FF7002F2A6E /* CardView.swift */,
+				D0F11037256C5C25002F2A6E /* CardViewModel.swift */,
 				D0F11027256B427F002F2A6E /* Assets.xcassets */,
 				D0F1102C256B427F002F2A6E /* Info.plist */,
 				D0F11029256B427F002F2A6E /* Preview Content */,
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F11038256C5C25002F2A6E /* CardViewModel.swift in Sources */,
 				D0F11026256B427E002F2A6E /* ContentView.swift in Sources */,
+				D0F11034256B4FF7002F2A6E /* CardView.swift in Sources */,
 				D0F11024256B427E002F2A6E /* SwiftUIExperimentApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

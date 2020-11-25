@@ -8,6 +8,60 @@
 import Foundation
 import SwiftUI
 
+extension Date {
+    func dayOfWeek() -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: self).capitalized
+        // or use capitalized(with: locale) if you want
+        
+        
+    }
+    func timeOfDay() -> Int {
+        var timeOfDay = Int()
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        timeOfDay = hour
+        return timeOfDay
+    }
+}
+
+func daysArrayLogic() -> [String] {
+    var tempArray = [String]()
+    let today = Date().dayOfWeek()
+    if today == "Sunday" {
+        tempArray.removeAll()
+        tempArray = ["Today","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    }
+    if today == "Monday" {
+        tempArray.removeAll()
+        tempArray = ["Today","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Monday"]
+    }
+    if today == "Tuesday" {
+        tempArray.removeAll()
+        tempArray = ["Today","Wednesday","Thursday","Friday","Saturday","Sunday","Monday","Tuesday"]
+    }
+    if today == "Wednesday" {
+        tempArray.removeAll()
+        tempArray = ["Today","Thursday","Friday","Saturday","Sunday","Monday","Tuesday","Wednesday"]
+    }
+    if today == "Thursday" {
+        tempArray.removeAll()
+        tempArray = ["Today)","Friday","Saturday","Sunday","Monday","Tuesday","Wednesday", "Thursday"]
+    }
+    if today == "Friday" {
+        tempArray.removeAll()
+        tempArray = ["Today","Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"]
+    }
+    if today == "Saturday" {
+        tempArray.removeAll()
+        tempArray = ["Today","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    }
+    
+    return tempArray
+}
+
 
 struct CardViewModel: Hashable, Identifiable {
     let id = UUID()

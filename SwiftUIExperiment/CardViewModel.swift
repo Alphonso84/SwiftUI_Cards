@@ -75,7 +75,7 @@ struct CardViewModel: Hashable, Identifiable {
 struct MockData {
     static let sampleCardView = CardViewModel(cardTtitle: "Monday", cardDescription: "Today will be Motivational Monday")
     
-    static var cardViewCollection = [CardViewModel(cardTtitle: "Monday", cardDescription: "Today will be Motivational Monday"),
+    @State static var cardViewCollection = [CardViewModel(cardTtitle: "Monday", cardDescription: "Today will be Motivational Monday"),
                                      CardViewModel(cardTtitle: "Tuesday", cardDescription: "Today will be Teaching Tuesday"),
                                      CardViewModel(cardTtitle: "Wednesday", cardDescription: "Today will be Wisdom Wednesday"),
                                      CardViewModel(cardTtitle: "Thursday", cardDescription: "Today will be Tech Talk Thursday"),

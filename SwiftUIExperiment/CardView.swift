@@ -11,6 +11,7 @@ let blueArray =  [Color.white, Color.blue]
 let redArray =  [Color.white, Color.red]
 let greenArray =  [Color.white, Color.green]
 let yellowArray =  [Color.white, Color.yellow]
+let grayArray = [Color.white, Color.gray]
 
 struct CardView: View {
     var colorArray = [blueArray, redArray, greenArray, yellowArray]
@@ -19,9 +20,11 @@ struct CardView: View {
         
         ZStack {
         RoundedRectangle(cornerRadius: 10, style: .circular)
-            .fill(LinearGradient(gradient: Gradient(colors: blueArray), startPoint: .topLeading, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
+            .fill(LinearGradient(gradient: Gradient(colors: grayArray), startPoint: .topLeading, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
+            .opacity(0.95)
+            .blur(radius:0.3)
             .frame(width: 300, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+            .shadow(color: .gray, radius: 2.5, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
             VStack {
             
                 Text(cardViewModel.cardTtitle ?? "")
@@ -31,8 +34,6 @@ struct CardView: View {
                     .offset(x: 0, y: -10)
                     .font(.body)
                     .frame(width: 300, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    
-                
             }
         }
     }

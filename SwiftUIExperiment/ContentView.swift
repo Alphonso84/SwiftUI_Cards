@@ -14,6 +14,10 @@ struct ContentView: View {
     @State var newCardViewCollection: [CardViewModel]
    
     var body: some View {
+        
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color.white, Color("MyColor")]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/)
+                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         VStack {
             Spacer()
             Button() {
@@ -33,12 +37,14 @@ struct ContentView: View {
                 ForEach(MockData.cardViewCollection.indices) { card  in
                     CardView(cardViewModel:MockData.cardViewCollection[card])
                         .offset(x:CGFloat(card) * 1, y:CGFloat(card) * CGFloat(offsetValue.height / 10))
+                       
                         .gesture(
                             DragGesture()
                                 .onChanged { gesture in
                                     offsetValue  = gesture.translation
                                 }
                                 .onEnded { _ in
+                                    offsetValue  = offsetValue
 //                                    if abs(self.offsetValue.height) > 150 {
 //                                        // remove the card
 //
@@ -60,6 +66,7 @@ struct ContentView: View {
         
         .sheet(isPresented: $addButtonWasPressed) {
             AddNewCardView()
+        }
         }
     }
 }

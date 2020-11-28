@@ -12,6 +12,11 @@ struct AddNewCardView: View {
     @State private var title: String = ""
     @State private var description: String = ""
     var body: some View {
+       
+        ZStack {
+            Color.clear
+                .blur(radius: 3.0)
+                .edgesIgnoringSafeArea(.all)
         VStack {
         Text("Add A New Card")
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
@@ -47,6 +52,7 @@ struct AddNewCardView: View {
             }
            
         }
+    }
     
     func addCardMethod() {
         let newCard = CardViewModel(cardTtitle: self.title, cardDescription: self.description)

@@ -36,21 +36,20 @@ struct ContentView: View {
             ZStack {
                 ForEach(MockData.cardViewCollection.indices) { card  in
                     CardView(cardViewModel:MockData.cardViewCollection[card])
-                        .offset(x:CGFloat(card) * 1, y:CGFloat(card) * CGFloat(offsetValue.height / 10))
-                       
+                        .offset(x:CGFloat(card) * CGFloat(offsetValue.width / 8), y:CGFloat(card) * CGFloat(offsetValue.height / 10))
+                        .rotation3DEffect(Angle(degrees: Double(offsetValue.width / 10)), axis: (x: 0, y: CGFloat(offsetValue.height / 100), z: 0))
+                        
                         .gesture(
                             DragGesture()
                                 .onChanged { gesture in
                                     offsetValue  = gesture.translation
                                 }
                                 .onEnded { _ in
-                                    offsetValue  = offsetValue
-//                                    if abs(self.offsetValue.height) > 150 {
-//                                        // remove the card
-//
-//                                    } else {
-//                                        //self.offsetValue.height = .zero
-//                                    }
+                                    
+                                    withAnimation(.linear(duration: 0.5)) {
+                                        offsetValue  = CGSize.zero
+                                    }
+                                    
                                 }
                         )
                 }

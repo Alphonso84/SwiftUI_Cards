@@ -56,6 +56,7 @@ struct AddNewCardView: View {
     
     func addCardMethod() {
         let newCard = CardViewModel(cardTtitle: self.title, cardDescription: self.description)
+        print(newCard)
         MockData.cardViewCollection.append(newCard)
     }
     }

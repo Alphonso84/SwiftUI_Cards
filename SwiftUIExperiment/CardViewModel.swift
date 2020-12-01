@@ -82,6 +82,6 @@ struct MockData {
                                      CardViewModel(cardTtitle: "Wednesday", cardDescription: "Today will be Wisdom Wednesday"),
                                      CardViewModel(cardTtitle: "Tuesday", cardDescription: "Today will be Teaching Tuesday"),
                                      CardViewModel(cardTtitle: "Monday", cardDescription: "Today will be Motivational Monday"),
-                                     CardViewModel(cardTtitle: "Sunday", cardDescription: "Decide to start the day happy. Let nothing steal your joy! How you start your day sets the tone for the rest of your day")
+                                     CardViewModel(cardTtitle: "Sunday", cardDescription: "Chelsea Kathleen Seabron is so incredibly beautiful. She makes my heart smile everyday I see her!")
     ]
 }

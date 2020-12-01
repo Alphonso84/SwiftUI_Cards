@@ -34,8 +34,8 @@ struct ContentView: View {
             .offset(x: 160, y: -230)
             
             ZStack {
-                ForEach(MockData.cardViewCollection.indices) { card  in
-                    CardView(cardViewModel:MockData.cardViewCollection[card])
+                ForEach(0..<newCardViewCollection.count, id: \.self) { card  in
+                    CardView(cardViewModel:newCardViewCollection[card])
                         .offset(x:CGFloat(card) * CGFloat(offsetValue.width / 8), y:CGFloat(card) * CGFloat(offsetValue.height / 10))
                         .rotation3DEffect(Angle(degrees: Double(offsetValue.width / 10)), axis: (x: 0, y: CGFloat(offsetValue.height / 100), z: 0))
                         
@@ -60,7 +60,11 @@ struct ContentView: View {
             Spacer()
         }
         .onAppear(perform: {
-            print(MockData.cardViewCollection.description)
+            newCardViewCollection = MockData.cardViewCollection
+            print(MockData.cardViewCollection)
+        })
+        .onChange(of: MockData.cardViewCollection, perform: { value in
+            newCardViewCollection = MockData.cardViewCollection
         })
         
         .sheet(isPresented: $addButtonWasPressed) {

@@ -36,7 +36,6 @@ struct AddNewCardView: View {
             }
             .offset(x: 0, y: -500)
             Button() {
-                addCardMethod()
                 self.presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("Done")
@@ -50,6 +49,9 @@ struct AddNewCardView: View {
             
            
             }
+        .onDisappear(perform: {
+            addCardMethod()
+        })
            
         }
     }
@@ -57,7 +59,8 @@ struct AddNewCardView: View {
     func addCardMethod() {
         let newCard = CardViewModel(cardTtitle: self.title, cardDescription: self.description)
         print(newCard)
-        MockData.cardViewCollection.append(newCard)
+        cardViewCollection.append(newCard)
+        print(cardViewCollection)
     }
     }
 struct AddNewCardView_Previews: PreviewProvider {

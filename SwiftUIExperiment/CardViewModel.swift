@@ -8,6 +8,16 @@
 import Foundation
 import SwiftUI
 
+//CardViewModel(cardTtitle: "Saturday", cardDescription: "Today will be Success Saturday"),
+//CardViewModel(cardTtitle: "Friday", cardDescription: "Today will be Finance Friday"),
+//CardViewModel(cardTtitle: "Thursday", cardDescription: "Today will be Tech Talk Thursday"),
+//CardViewModel(cardTtitle: "Wednesday", cardDescription: "Today will be Wisdom Wednesday"),
+//CardViewModel(cardTtitle: "Tuesday", cardDescription: "Today will be Teaching Tuesday"),
+//CardViewModel(cardTtitle: "Monday", cardDescription: "Today will be Motivational Monday"),
+//CardViewModel(cardTtitle: "Sunday", cardDescription: "Chelsea Kathleen Seabron is so incredibly beautiful. She makes my heart smile everyday I see her!")
+
+var cardViewCollection = [CardViewModel]()
+
 extension Date {
     func dayOfWeek() -> String? {
         let dateFormatter = DateFormatter()
